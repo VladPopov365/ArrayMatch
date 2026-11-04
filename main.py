@@ -1,4 +1,3 @@
-
 def input_array(name):
     while True:
         text = input(f"Введите элементы массива {name} через пробел: ")
@@ -47,11 +46,36 @@ def task_3(a, b):
     return result
 
 def main():
-    a = input_array("A")
-    b = input_array("B")
+    while True:
+        print("\n=== МЕНЮ ===")
+        print("1. Элементы A, повторяющиеся в B")
+        print("2. Неповторяющиеся элементы A, повторяющиеся в B")
+        print("3. Элементы, повторяющиеся в A и B")
+        print("0. Выход")
 
-    print("Массив A:", a)
-    print("Массив B:", b)
+        choice = input("Выберите пункт меню: ").strip()
+
+        if choice == "0":
+            print("Программа завершена.")
+            break
+
+        if choice not in ("1", "2", "3"):
+            print("Ошибка: выберите пункт от 0 до 3.")
+            continue
+
+        a = input_array("A")
+        b = input_array("B")
+
+        if choice == "1":
+            result = task_1(a, b)
+        elif choice == "2":
+            result = task_2(a, b)
+        else:
+            result = task_3(a, b)
+
+        print("Массив A:", a)
+        print("Массив B:", b)
+        print("Результат:", result)
 
 if __name__ == "__main__":
     main()
