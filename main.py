@@ -15,6 +15,16 @@ def input_array(name):
         except ValueError:
             print("Ошибка: вводите только целые числа.")
 
+# элементы массива А, повторяющиеся в массиве В несколько раз
+def task_1(a, b):
+    result = []
+
+    for x in a:
+        if b.count(x) >= 2 and x not in result:
+            result.append(x)
+
+    return result
+
 def main():
     a = input_array("A")
     b = input_array("B")
