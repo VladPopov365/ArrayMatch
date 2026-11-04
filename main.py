@@ -25,12 +25,24 @@ def task_1(a, b):
 
     return result
 
+# неповторяющиеся элементы массива А, которые присутствуют в массиве В в нескольких экземплярах
 def task_2(a, b):
     result = []
 
     for x in a:
         if a.count(x) == 1 and b.count(x) >= 2:
             result.append(x)
+
+    return result
+
+# элементы, которые присутствуют в обоих массивах А и В в нескольких экземплярах
+def task_3(a, b):
+    result = []
+
+    for x in a:
+        if a.count(x) >= 2 and b.count(x) >= 2:
+            if x not in result:
+                result.append(x)
 
     return result
 
